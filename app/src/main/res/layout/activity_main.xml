@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/redButton"
+        android:layout_width="124dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="130dp"
+        android:background="#F10909"
+        android:text="Rojo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/yellowButton"
+        android:layout_width="124dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="55dp"
+        android:background="#F4DD0F"
+        android:text="Amarillo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/greenButton"
+        android:layout_width="124dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="51dp"
+        android:background="#16E81E"
+        android:text="Verde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/redButton" />
+
+    <Button
+        android:id="@+id/blueButton"
+        android:layout_width="124dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="52dp"
+        android:background="#2196F3"
+        android:text="Azul"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yellowButton" /><![CDATA[
+
+    app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greenButton" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="64dp"
+        android:drawableLeft="@android:drawable/ic_media_play"
+        android:text="Inicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greenButton" />
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="32dp"
+        android:drawableLeft="@android:drawable/checkbox_on_background"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blueButton" />
+
+</android.support.constraint.ConstraintLayout>
