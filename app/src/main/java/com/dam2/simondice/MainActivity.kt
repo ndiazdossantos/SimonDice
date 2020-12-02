@@ -1,6 +1,6 @@
 package com.dam2.simondice
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         play.setOnClickListener{
             finished = false
-            reset(game,player)
+            borrar(game,player)
             engadirSecuencia(game)
             toast2.show()
             mostrarSecuencia(game)
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         return secuencia == secuenciaUsuario
     }
 
-    fun reset(secuencia: MutableList<Int>, secuenciaUsuario: MutableList<Int>){
+    fun borrar(secuencia: MutableList<Int>, secuenciaUsuario: MutableList<Int>){
         secuencia.clear()
         secuenciaUsuario.clear()
     }
