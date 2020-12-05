@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 
 class MyViewModel : ViewModel() {
 
+
     // El MutableLiveData almacena la información para que no se pierda, cuando estamos usando los ViewModel
 
     var listaReto = MutableLiveData<MutableList<Int>>()
@@ -20,6 +21,12 @@ class MyViewModel : ViewModel() {
 
     // nos será saber el estado del juego para mostrar o no "x" funciones
     var estado  = MutableLiveData<Boolean>()
+
+    init {
+        listaReto.value = mutableListOf()
+        listaUsuario.value = mutableListOf()
+    }
+
 
     // hacemos un metodo para restablecer todos los datos almacenados a 0 y poder iniciar sin nada en memoria
     fun borrar(){
@@ -29,7 +36,7 @@ class MyViewModel : ViewModel() {
 
     // el ? en el value verifica si hay algo almacenado o no
 
-  private fun engadirValor(){    // el propio IDE me pide que sea privada la función
+     fun engadirValor(){
         val numero = Random.nextInt(4) + 1
         listaReto.value?.add(numero)
         listaReto.postValue(listaReto.value)
@@ -47,32 +54,40 @@ class MyViewModel : ViewModel() {
 
     // guardamos el numero(asignado a un color) introducido por el usuario
 
-    fun gardarSecuencia (secuenciaColor: Int){
-
-        listaUsuario.value?.add(secuenciaColor)
-
+    fun gardarSecuencia(color: Int) {
+        when (color) {
+            1 -> listaUsuario.value?.add(1)
+            2 -> listaUsuario.value?.add(2)
+            3 -> listaUsuario.value?.add(3)
+            else -> listaUsuario.value!!.add(4)
+        }
     }
+
     // si el valor de la lista dada de colores es igual a la introducida por la del usuario, el juego continua
-    fun compararSecuencia(){
+    fun compararSecuencia() : Boolean{
+        var variable = false;
        if(listaReto.value == listaUsuario.value){
            listaUsuario.value?.clear()
            engadirValor()
        }else{
+           estado.value = true;
+           variable = true;
            borrar()
        }
+        return variable
     }
 
     fun mostrarSecuencia(listaBotones: List<Button>) {
         CoroutineScope(Dispatchers.Main).launch {
             for (colors in listaReto.value!!) {
-                delay(200)
-                listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#000000")))
-                delay(800)
+               
+                listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#000000"))
+                delay(1000)
                 when (colors) {
-                    1 -> listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F10909")))
-                    2 -> listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#16E81E")))
-                    3 -> listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F4DD0F")))
-                    4 -> listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#2196F3")))
+                    1-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#F10909"))
+                    2-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#16E81E"))
+                    3-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#F4DD0F"))
+                    4-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#2196F3"))
                 }
             }
         }

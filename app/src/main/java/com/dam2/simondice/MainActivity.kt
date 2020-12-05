@@ -5,14 +5,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
-import kotlin.collections.ArrayList
-import kotlin.random.Random
+import androidx.lifecycle.Observer
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val otraClase by viewModels<MyViewModel>()
 
         val play = findViewById<Button>(R.id.playButton)
         val checklist = findViewById<Button>(R.id.checkButton)
@@ -24,11 +23,36 @@ class MainActivity : AppCompatActivity() {
         val toast = Toast.makeText(applicationContext,"Juego Finalizado", Toast.LENGTH_SHORT)
         val toast2 = Toast.makeText(applicationContext,"Inicio", Toast.LENGTH_SHORT)
 
-        val otraClase by viewModels<MyViewModel>()
+        val botones = listOf(red,blue,green,yellow)
 
-
+       otraClase.listaReto.observe(this, Observer{
+            otraClase.mostrarSecuencia(botones)
+        })
 
         play.setOnClickListener{
+            otraClase.inicio()
+            toast2.show()
+        }
+
+        checklist.setOnClickListener{
+            if (!otraClase.compararSecuencia())
+                toast.show()
+        }
+
+        red.setOnClickListener{
+            otraClase.gardarSecuencia(1)
+        }
+        green.setOnClickListener{
+            otraClase.gardarSecuencia(2)
+        }
+        yellow.setOnClickListener{
+            otraClase.gardarSecuencia(3)
+        }
+        blue.setOnClickListener{
+            otraClase.gardarSecuencia(4)
+        }
+
+   /*     play.setOnClickListener{
             finished = false
             borrar(game,player)
             engadirSecuencia(game)
@@ -36,7 +60,8 @@ class MainActivity : AppCompatActivity() {
             mostrarSecuencia(game)
         }
 
-        checklist.setOnClickListener{
+    */
+    /*    checklist.setOnClickListener{
             if(finished==false){
                 if(comprobarSecuencia(game,player)){
                     engadirSecuencia(game)
@@ -60,6 +85,8 @@ class MainActivity : AppCompatActivity() {
         blue.setOnClickListener{
             gardarSecuencia(player,4)
         }
+
+     */
     }
 
   /*  fun engadirSecuencia(secuencia : MutableList<Int>)  {
