@@ -78,7 +78,7 @@ class MyViewModel : ViewModel() {
     fun mostrarSecuencia(listaBotones: List<Button>) {
         CoroutineScope(Dispatchers.Main).launch {
             for (colors in listaReto.value!!) {
-               
+                delay(500)
                 listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#000000"))
                 delay(1000)
                 when (colors) {
