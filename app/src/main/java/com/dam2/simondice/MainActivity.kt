@@ -20,41 +20,41 @@ class MainActivity : AppCompatActivity() {
         val yellow = findViewById<Button>(R.id.yellowButton)
         val green = findViewById<Button>(R.id.greenButton)
 
-        val toast = Toast.makeText(applicationContext,"Acierto! Continua jugando!", Toast.LENGTH_SHORT)
-        val toast2 = Toast.makeText(applicationContext,"Inicio", Toast.LENGTH_SHORT)
-        val toast3 = Toast.makeText(applicationContext,"Error, juego finalizado", Toast.LENGTH_SHORT)
-  // solucionado error, hay que tener los botones ordenados como la lista o te pintara unos de otros colores
-        val botones = listOf(red,green,yellow,blue)
+        val toast = Toast.makeText(applicationContext, "Acierto! Continua jugando!", Toast.LENGTH_SHORT)
+        val toast2 = Toast.makeText(applicationContext, "Inicio", Toast.LENGTH_SHORT)
+        val toast3 = Toast.makeText(applicationContext, "Error, juego finalizado", Toast.LENGTH_SHORT)
+        // solucionado error, hay que tener los botones ordenados como la lista o te pintara unos de otros colores
+        val botones = listOf(red, green, yellow, blue)
 
-       otraClase.listaReto.observe(this, Observer{
+        otraClase.listaReto.observe(this, Observer {
             otraClase.mostrarSecuencia(botones)
         })
 
-        play.setOnClickListener{
+        play.setOnClickListener {
             otraClase.inicio()
             toast2.show()
         }
 
-        checklist.setOnClickListener{
+        checklist.setOnClickListener {
             if (!otraClase.compararSecuencia())
                 toast.show()
-            else{
+            else {
                 toast3.show()
             }
         }
 
-        red.setOnClickListener{
+        red.setOnClickListener {
             otraClase.gardarSecuencia(1)
         }
-        green.setOnClickListener{
+        green.setOnClickListener {
             otraClase.gardarSecuencia(2)
         }
-        yellow.setOnClickListener{
+        yellow.setOnClickListener {
             otraClase.gardarSecuencia(3)
         }
-        blue.setOnClickListener{
+        blue.setOnClickListener {
             otraClase.gardarSecuencia(4)
         }
 
-
+    }
 }
