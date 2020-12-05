@@ -12,9 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var game = ArrayList<Int>()
-        var player = ArrayList<Int>()
-        var finished  = false
 
         val play = findViewById<Button>(R.id.playButton)
         val checklist = findViewById<Button>(R.id.checkButton)
