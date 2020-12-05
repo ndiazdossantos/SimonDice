@@ -1,10 +1,15 @@
 package com.dam2.simondice
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.widget.Button
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlin.random.Random
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MyViewModel : ViewModel() {
 
@@ -57,15 +62,21 @@ class MyViewModel : ViewModel() {
        }
     }
 
-    fun mostrarSecuencia(listButton: List<Button>){
+    fun mostrarSecuencia(listaBotones: List<Button>) {
         CoroutineScope(Dispatchers.Main).launch {
-            for (colors in listaReto.value!!)
-
+            for (colors in listaReto.value!!) {
+                delay(200)
+                listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#000000")))
+                delay(800)
+                when (colors) {
+                    1 -> listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F10909")))
+                    2 -> listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#16E81E")))
+                    3 -> listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F4DD0F")))
+                    4 -> listaBotones.get(colors - 1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#2196F3")))
+                }
+            }
+        }
     }
-
-
-
-
 
 
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.viewModels
 import kotlin.collections.ArrayList
 import kotlin.random.Random
 
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
 
         val toast = Toast.makeText(applicationContext,"Juego Finalizado", Toast.LENGTH_SHORT)
         val toast2 = Toast.makeText(applicationContext,"Inicio", Toast.LENGTH_SHORT)
+
+        val otraClase by viewModels<MyViewModel>()
+
 
 
         play.setOnClickListener{
@@ -58,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun engadirSecuencia(secuencia : MutableList<Int>)  {
+  /*  fun engadirSecuencia(secuencia : MutableList<Int>)  {
         val numb= Random.nextInt(4) + 1
         secuencia.add(numb)
     }
@@ -92,4 +96,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+   */
 }
