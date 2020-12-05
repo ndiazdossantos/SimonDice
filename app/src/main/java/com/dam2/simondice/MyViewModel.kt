@@ -54,13 +54,11 @@ class MyViewModel : ViewModel() {
 
     // guardamos el numero(asignado a un color) introducido por el usuario
 
-    fun gardarSecuencia(color: Int) {
-        when (color) {
-            1 -> listaUsuario.value?.add(1)
-            2 -> listaUsuario.value?.add(2)
-            3 -> listaUsuario.value?.add(3)
-            else -> listaUsuario.value!!.add(4)
-        }
+
+    fun gardarSecuencia (secuenciaColor: Int){
+
+        listaUsuario.value?.add(secuenciaColor)
+
     }
 
     // si el valor de la lista dada de colores es igual a la introducida por la del usuario, el juego continua

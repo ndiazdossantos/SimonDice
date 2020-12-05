@@ -20,10 +20,11 @@ class MainActivity : AppCompatActivity() {
         val yellow = findViewById<Button>(R.id.yellowButton)
         val green = findViewById<Button>(R.id.greenButton)
 
-        val toast = Toast.makeText(applicationContext,"Juego Finalizado", Toast.LENGTH_SHORT)
+        val toast = Toast.makeText(applicationContext,"Acierto! Continua jugando!", Toast.LENGTH_SHORT)
         val toast2 = Toast.makeText(applicationContext,"Inicio", Toast.LENGTH_SHORT)
-
-        val botones = listOf(red,blue,green,yellow)
+        val toast3 = Toast.makeText(applicationContext,"Error, juego finalizado", Toast.LENGTH_SHORT)
+  // solucionado error, hay que tener los botones ordenados como la lista o te pintara unos de otros colores
+        val botones = listOf(red,green,yellow,blue)
 
        otraClase.listaReto.observe(this, Observer{
             otraClase.mostrarSecuencia(botones)
@@ -37,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         checklist.setOnClickListener{
             if (!otraClase.compararSecuencia())
                 toast.show()
+            else{
+                toast3.show()
+            }
         }
 
         red.setOnClickListener{
