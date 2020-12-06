@@ -24,6 +24,10 @@ __Video en Youtube del proyecto__
 [![Watch the video](https://i.imgur.com/2ea6E8p.png)](https://youtu.be/15Te1b-p_88)
 
 
+__Esquema de la aplicación Simon Dice__
+![alt text](https://i.imgur.com/bua9Ef3.jpg)
+
+
 
 
 
