@@ -14,7 +14,11 @@ __GIF en el que se muestra el contenido del repositorio en interfaz gráfica__
 
 __GIF Añadido indicador de ronda__
 
+Vertical
 (https://i.imgur.com/O5seqNC.mp4)
+
+Horizontal
+(https://i.imgur.com/Ppz1rf4.mp4)
 
 __Video en Youtube del proyecto__
 [![Watch the video](https://i.imgur.com/2ea6E8p.png)](https://youtu.be/15Te1b-p_88)
