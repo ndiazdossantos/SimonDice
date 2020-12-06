@@ -74,7 +74,7 @@ class MyViewModel : ViewModel() {
        }
         return variable
     }
-
+ // si la secuencia de colores es la iniciar cambiamos el color a negro y posteriormente reasignamos el mismo color inicial (Corutinas)
     fun mostrarSecuencia(listaBotones: List<Button>) {
         CoroutineScope(Dispatchers.Main).launch {
             for (colors in listaReto.value!!) {
