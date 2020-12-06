@@ -75,6 +75,7 @@ class MyViewModel : ViewModel() {
         return variable
     }
  // si la secuencia de colores es la iniciar cambiamos el color a negro y posteriormente reasignamos el mismo color inicial (Corutinas)
+ // hacemos un delay inicial para que cuando coincida color no se quede el negro constantemente y parpadee, el segundo es para que haya un espacio de tiempo antes de volver al inicial
     fun mostrarSecuencia(listaBotones: List<Button>) {
         CoroutineScope(Dispatchers.Main).launch {
             for (colors in listaReto.value!!) {

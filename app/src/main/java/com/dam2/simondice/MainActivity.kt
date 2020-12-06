@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         val toast = Toast.makeText(applicationContext, "Acierto! Continua jugando!", Toast.LENGTH_SHORT)
         val toast2 = Toast.makeText(applicationContext, "Inicio", Toast.LENGTH_SHORT)
         val toast3 = Toast.makeText(applicationContext, "Error, juego finalizado", Toast.LENGTH_SHORT)
+
+        // contenido para indicar la ronda actual
         val ronda = findViewById<TextView>(R.id.ronda)
         val textoRonda = "Ronda: "
 
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         otraClase.listaReto.observe(this, Observer {
             otraClase.mostrarSecuencia(botones)
-            ronda.text = "$textoRonda ${otraClase.listaReto.value!!.size}"
+            ronda.text = "$textoRonda ${otraClase.listaReto.value?.size}"
 
         })
 
