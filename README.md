@@ -6,13 +6,17 @@ _Consiste en una aplicación en Android Studio utilizando diferentes librerías.
 
 
 ## Preview
-_GIF en el que se muestra el contenido del repositorio en interfaz gráfica_
+__GIF en el que se muestra el contenido del repositorio en interfaz gráfica__
 
 
 (https://i.imgur.com/BdCcBRu.mp4)
 (https://i.imgur.com/JFxDOis.mp4)
 
-_Video en Youtube del proyecto_
+__GIF Añadido indicador de ronda__
+
+(https://i.imgur.com/O5seqNC.mp4)
+
+__Video en Youtube del proyecto__
 [![Watch the video](https://i.imgur.com/2ea6E8p.png)](https://youtu.be/15Te1b-p_88)
 
 
