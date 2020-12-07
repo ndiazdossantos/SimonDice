@@ -21,7 +21,7 @@ Horizontal
 (https://i.imgur.com/Ppz1rf4.mp4)
 
 __Video en Youtube del proyecto__
-[![Watch the video](https://i.imgur.com/YHwIYxE.png)](https://youtu.be/nc0qE3w7q3g)
+[![Watch the video](https://i.imgur.com/jTMVyab.png)](https://youtu.be/nc0qE3w7q3g)
 
 
 __Esquema de la aplicación Simon Dice__
